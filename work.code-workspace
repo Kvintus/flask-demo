@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"uri": "sftp://pi:raspberry@192.168.1.32/home/pi",
+			"name": "Remote"
+		}
+	],
+	"settings": {
+		"python.pythonPath": "/home/kvintus/.local/share/virtualenvs/flask-demo-OHaHMuhP/bin/python"
+	}
+}
