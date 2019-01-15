@@ -1,17 +1,25 @@
 from flask import Flask, render_template, request, url_for
-# import led
+import led
 
-# cervena = led.Led(23)
-# modra = led.Led(18)
-# biela = led.Led(24)
+cervena = led.Led(18)
+modra = led.Led(17)
+biela = led.Led(27)
 
 app = Flask(__name__) 
 
 ## Here comes the magic ##
 
-@app.route('/led')
+@app.route('/led', methods = ['POST'])
 def led():
-    return 'peter'
+    re = request.get_json('led').get('led')
+    if re == 'blue':
+        modra.toggle()
+    elif  re == 'red':
+        cervena.toggle()
+    elif  re == 'white':
+        biela.toggle()
+    
+    return '', 204
 
 @app.route('/')
 def index():
